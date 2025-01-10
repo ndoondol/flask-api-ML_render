@@ -8,7 +8,7 @@ from pydantic import BaseModel, ValidationError
 model = joblib.load('logistic_regression_model.pkl')
 
 # Initialiser l'application Flask
-app = Flask(__name__)  # Corrigé ici
+app = Flask(__name__)  
 
 # Classe pour valider les données d'entrée
 class DonneesEntree(BaseModel):
@@ -55,5 +55,5 @@ def predict():
         return jsonify({"error": str(e)}), 500
 
 # Lancer l'application Flask
-if __name__ == '__main__':  # Corrigé ici
+if __name__ == '__main__':  
     app.run(debug=True)
